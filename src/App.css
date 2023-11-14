@@ -28,6 +28,17 @@ body{
 
 .productPreview{
   width: 50%;
+  position: relative;
+}
+
+.featureData{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 48px;
+  font-weight: 600;
 }
 
 .productPreview > img{

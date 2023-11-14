@@ -14,6 +14,9 @@ function App() {
       <div className='mainContainer'>
         <div className='productPreview'>
           <img src='https://imgur.com/iOeUBV7.png' alt='Product Preview'/>
+          <div className='featureData'>
+            <p>{`${new Date().getHours()}:${new Date().getMinutes()}`}</p>
+          </div>
         </div>
         <div className='productData'>
           <h1 className='productTitle'>{ProductData.title}</h1>
