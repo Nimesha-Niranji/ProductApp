@@ -11,7 +11,7 @@ const ProductPreview = (props) => {
           <img src={props.currentPreviewImage} alt='Product Preview'/>
 
           {
-            props.heartBeatSection ?
+            props.currentSelectedFeature === 1 ?
             (<div className={classes.heartBeatSection}>
             <i className="fa-solid fa-heart-pulse"></i>
             <p>78</p>

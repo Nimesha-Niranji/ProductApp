@@ -4,21 +4,27 @@ import classes from './ProductInfo.module.css';
 const ProductInfo = (props) => {
   const colorOptions = props.data.colorOptions.map((item,pos) =>{
     const classArr = [classes.productImg]
-    if(pos === 0){
+    if(pos === props.currentPreviewImagePos){
       classArr.push(classes.selectedProductImg);
     }
     return(
-      <img key ={pos} className={classArr.join(' ')} src={item.imageUrl} alt={item.styleName}/>
+      <img key ={pos} className={classArr.join(' ')} src={item.imageUrl} alt={item.styleName} onClick={()=>props.onColorOptionClick(pos)}/>
     );
   })
 
   const featureList = props.data.featureList.map((item,pos) =>{
     const classArr = [classes.featureItem]
-    if(pos === 0){
-      classArr.push(classes.selectedProductImg);
+
+    if(pos === 1 && props.currentSelectedFeature){
+      classArr.push(classes.selectedFeatureItem);
+    }else if(pos === 0 && !props.currentSelectedFeature){
+      classArr.push(classes.selectedFeatureItem);
     }
+    // if(pos === 1 && props.currentSelectedFeature){
+    //   classArr.push(classes.selectedFeatureItem);
+    // }  
     return(
-      <button key={pos} className={classArr.join(' ')}>{item}</button>
+      <button onClick={() => props.onFeatureItemClich(pos)} key={pos} className={classArr.join(' ')}>{item}</button>
     );
   })
 
